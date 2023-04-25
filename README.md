@@ -52,7 +52,7 @@
 |---- .gitattributes
 |---- .gitignore
 |
-|---- cypress.env.json (credentials & environment variables)
+|---- cypress.env.json (credentials & environment variables - OPTIONAL)
 |---- cypress.config.json (cypress related settings)
 |---- LICENSE
 |---- package-lock.json
