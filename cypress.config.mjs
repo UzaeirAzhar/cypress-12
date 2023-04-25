@@ -14,8 +14,7 @@ export async function setupNodeEvents (on, config) {
         resolve: {
           extensions: ['.ts', '.js', '.mjs'],
           alias: {
-            '@page': path.resolve('cypress/support/pages/'),
-            '@page_visit': path.resolve('cypress/support/pages/')
+            '@page': path.resolve('cypress/support/pages/')
           }
         },
         module: {
@@ -40,7 +39,10 @@ export async function setupNodeEvents (on, config) {
 }
 
 export default defineConfig({
+  chromeWebSecurity: false,
+  userAgent: 'axios/0.27.2',
   e2e: {
+    baseUrl: 'https://www.atu.de/',
     specPattern: '**/e2e/*.feature',
     supportFile: false,
     experimentalWebKitSupport: true,
