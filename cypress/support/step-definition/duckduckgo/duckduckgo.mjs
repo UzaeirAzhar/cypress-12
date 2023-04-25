@@ -1,24 +1,25 @@
 import { When, Then } from '@badeball/cypress-cucumber-preprocessor'
-import visit_new from '@page/visit.js'
-//import { page_assert, page_visit } from '@page_visit/example.js'
-import * as page from '@page_visit/example.js'
+import visit_page from '@page/visit.js'
+import * as page from '@page/atu-example.js'
 
-const visit = new visit_new()
+const visit = new visit_page()
 
 When('I visit duckduckgo.com', () => {
-  //visit.page()
+  visit.page()
+})
+
+When('I visit ATU shop page', () => {
   page.page_visit()
 })
 
 Then('I should see a search bar', () => {
-  //visit.assert()
-  page.page_assert()
+  visit.page_assert()
 })
 
 Then('I get some title', () => {
   let array = []
   let test_array = ['private search', 'tracker blocking', 'site encryption']
-  array = page.page_get_title()
+  array = visit.page_get_title()
   cy.wrap(array).then(() => {
     expect(array).not.to.be.undefined
     expect(array).to.be.an('array')
